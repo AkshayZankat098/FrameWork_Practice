@@ -1,6 +1,7 @@
 //Step Definition File : Tells what to do based on the step in feature file and calling java methods.
 package Stepdefinations;
 
+import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -19,8 +20,14 @@ public class LoginPage {
         driver = new ChromeDriver();
     }
 
+    @After
+    public void Close(){
+        driver.quit();
+    }
+
     @Given("I am on the OpenCart login page or create object")
     public void OpenSite () {
+
         //Create object of login page         And     //Call Constructor
         loginPage = new org.example.PracticeSitePages.LoginPage(driver);
         driver.get("https://practicetestautomation.com/practice-test-login/");
