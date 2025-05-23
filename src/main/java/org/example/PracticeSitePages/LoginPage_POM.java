@@ -1,5 +1,6 @@
 //Page Class (PageFactory class or POM Structure) : Tells how to do it using Selenium actions and java related logics we can write here.
 package org.example.PracticeSitePages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,4 +52,5 @@ public class LoginPage_POM {
     public void logOut() {
         logoutLink.click();
     }
+
 }
