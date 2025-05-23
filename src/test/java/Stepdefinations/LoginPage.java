@@ -1,7 +1,8 @@
 //Step Definition File : Tells what to do based on the step in feature file and calling java methods.
-package Stepdefinations;
 
+package Stepdefinations;
 import io.cucumber.java.After;
+import org.example.PracticeSitePages.LoginPage_POM;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -13,11 +14,13 @@ import io.cucumber.java.en.When;
 public class LoginPage {
 
     private WebDriver driver;
-    private org.example.PracticeSitePages.LoginPage loginPage;
+    private LoginPage_POM loginPage;
 
     @Before
     public void setup() {
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        loginPage = new LoginPage_POM(driver); //Initialize at runtime when driver is ready
     }
 
     @After
@@ -27,11 +30,7 @@ public class LoginPage {
 
     @Given("I am on the OpenCart login page or create object")
     public void OpenSite () {
-
-        //Create object of login page         And     //Call Constructor
-        loginPage = new org.example.PracticeSitePages.LoginPage(driver);
         driver.get("https://practicetestautomation.com/practice-test-login/");
-        driver.manage().window().maximize();
     }
 
     @Given("I have entered a valid username and password")
@@ -49,13 +48,13 @@ public class LoginPage {
 
     @Then("I should be logged in successfully")
     public void CheckLogin () {
-        Assert.assertTrue(loginPage.CheckLogin_Message(), "Login message was not as expected.");
+        Assert.assertTrue(loginPage.checkLoginMessage(), "Login message was not as expected.");
         System.out.println("Login message check passed.");
     }
 
     @Given("Logout done")
     public void LogOut(){
-        loginPage.LogOut_Done();
+        loginPage.logOut();
     }
 
 }
