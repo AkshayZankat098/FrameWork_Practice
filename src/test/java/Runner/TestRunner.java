@@ -1,10 +1,11 @@
 package Runner;
 
-import io.cucumber.testng.AbstractTestNGCucumberTests;  //
-import io.cucumber.testng.CucumberOptions; //
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.DataProvider;  //
 
-@CucumberOptions(features = "B:\\Akshay Automation\\Automation Projects\\FrameWork_Practice\\FrameWork_Practice\\src\\test\\resource\\features\\Qkart.feature",
+import io.cucumber.testng.AbstractTestNGCucumberTests; //
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(features = "B:\\Akshay Automation\\Automation Projects\\FrameWork_Practice\\FrameWork_Practice\\src\\test\\resource\\features",
         glue = {"Stepdefinations"},
         plugin = {"pretty", "html:target/cucumber-reports", "json:target/cucumber.json"},
         monochrome = true,

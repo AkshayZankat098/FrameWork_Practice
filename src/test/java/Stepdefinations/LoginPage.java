@@ -1,11 +1,12 @@
 //Step Definition File : Tells what to do based on the step in feature file and calling java methods.
 
 package Stepdefinations;
-import io.cucumber.java.After;
 import org.example.PracticeSitePages.LoginPage_POM;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,14 +14,16 @@ import io.cucumber.java.en.When;
 
 public class LoginPage {
 
-    private WebDriver driver;
+    public WebDriver driver;
     private LoginPage_POM loginPage;
-
+ 
+   
     @Before
     public void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         loginPage = new LoginPage_POM(driver); //Initialize at runtime when driver is ready
+        
     }
 
     @After
