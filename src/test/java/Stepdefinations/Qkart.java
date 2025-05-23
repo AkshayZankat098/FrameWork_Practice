@@ -3,11 +3,10 @@
 package Stepdefinations;
 import Base.BaseClass;
 import io.cucumber.java.en.Given;
-import org.example.PracticeSitePages.Qkart_POM;
 
 public class Qkart extends BaseClass {
 
-    @Given("Open Qkart")
+    @Given("Open Qkart Site")
     public void openSite() {
         qkartPage.openURL("https://crio-qkart-qa.vercel.app/");
     }
