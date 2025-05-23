@@ -1,16 +1,13 @@
 //Step Definition File : Tells what to do based on the step in feature file and calling java methods.
 package Stepdefinations;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 
 public class LoginPage {
 
@@ -21,13 +18,6 @@ public class LoginPage {
     public void setup() {
         driver = new ChromeDriver();
     }
-
-//    @After
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
 
     @Given("I am on the OpenCart login page or create object")
     public void OpenSite () {
