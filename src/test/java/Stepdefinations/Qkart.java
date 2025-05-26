@@ -5,14 +5,11 @@ import io.cucumber.java.en.Given;
 
 public class Qkart extends BaseTest {
 
-    @Given("Open Qkart")
-    public void open_Qkart() {
-        browser().get("https://google.com");
+    @Given("Inlize Browser")
+    public void openURL() {
+        initializeBrowserAndPage();    //Reuse from BaseTest
+        driver.get("https://www.google.com/");
+        Qkart.Search_InGoogle("Virat");
     }
 
-    // @Given("Search Qkart")
-    // public void Search() {
-    //     Qkart qk = new Qkart(driver);
-    //     enter_name("Virat");
-    // }
 }

@@ -29,7 +29,7 @@ public class LoginPage_POM {
     // Constructor
     public LoginPage_POM(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver, this); // Initialize WebElements
+        PageFactory.initElements(driver, this);       // Initialize WebElements
     }
 
     // Page Methods/Actions
